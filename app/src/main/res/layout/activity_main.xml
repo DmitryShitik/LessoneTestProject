@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/include_edit_text_id"
+            layout="@layout/example_edit_text_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_bottom" />
+
+        <include
+            android:id="@+id/include_button_id"
+            layout="@layout/example_button_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_bottom" />
+
+        <include
+            android:id="@+id/include_toast_id"
+            layout="@layout/example_toast_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_bottom" />
+
+        <include
+            android:id="@+id/include_snackbar_id"
+            layout="@layout/example_snackbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_bottom" />
+
+        <include
+            android:id="@+id/include_checkbox_id"
+            layout="@layout/example_checkbox_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/margin_bottom" />
+
+        <include
+            android:id="@+id/include_toggle_button_id"
+            layout="@layout/example_toggle_button_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/margin_bottom" />
+
+        <include
+            android:id="@+id/include_radio_button_id"
+            layout="@layout/example_radio_button_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/margin_bottom" />
+
+    </LinearLayout>
+
+</ScrollView>

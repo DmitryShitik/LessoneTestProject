@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Lessons Test Project</string>
+    <string name="text_for_edit_text_tv">E_T</string>
+    <string name="text_for_snackbar_tv">S_B</string>
+    <string name="text_fot_button_tv">BTN</string>
+    <string name="text_for_toast_tv">TOA</string>
+    <string name="text_for_checkbox_tv">CB</string>
+    <string name="hint_fot_edit_text">Write text</string>
+    <string name="text_fot_button_tv_press">Btn Press</string>
+    <string name="text_for_button">Press</string>
+    <string name="text_for_toast_message">Toast is here</string>
+    <string name="text_for_snackbar_message">Snackbar is here</string>
+    <string name="text_for_snackbar_button">Next</string>
+    <string name="text_for_snackbar_on">S_B+</string>
+    <string name="text_for_snackbar_off">S_B-</string>
+    <string name="text_for_checkbox_r">R</string>
+    <string name="text_for_checkbox_g">G</string>
+    <string name="text_for_checkbox_b">B</string>
+    <string name="text_fot_toggle_button_tv">TB</string>
+    <string name="text_for_toggle_button_on">ON</string>
+    <string name="text_for_toggle_button_is_press">TB is </string>
+    <string name="text_for_toggle_button_is_not_press">TB isn\'t </string>
+    <string name="text_for_toggle_button_off">OFF</string>
+    <string name="text_fot_radio_button_tv">RB</string>
+    <string name="text_for_radio_button_left">Left</string>
+    <string name="text_for_radio_button_right">Right</string>
+</resources>
