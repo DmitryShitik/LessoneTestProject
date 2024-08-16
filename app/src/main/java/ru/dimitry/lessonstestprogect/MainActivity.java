@@ -1,5 +1,7 @@
 package ru.dimitry.lessonstestprogect;
 
+import static android.widget.Toast.makeText;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
@@ -7,10 +9,13 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -36,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
     CheckBox checkboxG;
     CheckBox checkboxB;
     ToggleButton toggleButton;
+    RadioGroup radioGroup;
+    RadioButton rBut1;
+    RadioButton rBut2;
 
     public void init() {
         textViewForEditText = findViewById(R.id.text_view_for_edit_text_id);
@@ -52,6 +60,9 @@ public class MainActivity extends AppCompatActivity {
         checkboxG = findViewById(R.id.checkbox_g_id);
         checkboxB = findViewById(R.id.checkbox_b_id);
         toggleButton = findViewById(R.id.toggle_button_id);
+        radioGroup = findViewById(R.id.radio_group_id);
+        rBut1 = findViewById(R.id.radio_button_1_id);
+        rBut2 = findViewById(R.id.radio_button_2_id);
     }
 
     @Override
@@ -97,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
          * button вызывает Toast с сообщением
          */
         buttonForToast.setOnClickListener(View -> {
-            Toast toast = Toast.makeText(this, R.string.text_for_toast_message, Toast.LENGTH_SHORT);
+            Toast toast = makeText(this, R.string.text_for_toast_message, Toast.LENGTH_SHORT);
             //toast.setGravity(Gravity.TOP,0,0);
             toast.show();
         });
@@ -146,6 +157,10 @@ public class MainActivity extends AppCompatActivity {
                 textViewForToggleButton.setText(R.string.text_for_toggle_button_is_not_press);
             }
         });
+
+        rBut1.setOnClickListener((view)->onRadioButtonClicked(view));
+        rBut2.setOnClickListener((view)->onRadioButtonClicked(view));
+
     }
 
     public void setRGBBgCheckbox() {
@@ -163,6 +178,23 @@ public class MainActivity extends AppCompatActivity {
             textViewForCheckbox.setBackgroundResource(R.color.grey_panel);
         } else {
             textViewForCheckbox.setBackgroundColor(Color.rgb(r, g, b));
+        }
+    }
+    public void onRadioButtonClicked(View view){
+        RadioButton radio = (RadioButton) view;
+        boolean checked = radio.isChecked();
+        String test = radio.getText().toString();
+        switch (test) {
+            case "Left":
+                Toast toastL =makeText(this,"Left",Toast.LENGTH_SHORT);
+                toastL.setGravity(Gravity.LEFT,0,0);
+                toastL.show();
+                break;
+            case "Right":
+                Toast toastR =makeText(this,"Right",Toast.LENGTH_SHORT);
+                toastR.setGravity(Gravity.RIGHT,0,0);
+                toastR.show();
+                break;
         }
     }
 }
