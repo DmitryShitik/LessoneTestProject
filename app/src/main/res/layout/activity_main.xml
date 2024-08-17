@@ -60,6 +60,13 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="@dimen/margin_bottom" />
 
+        <include
+            android:id="@+id/include_radio_button_id"
+            layout="@layout/example_seek_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/margin_bottom" />
+
     </LinearLayout>
 
 </ScrollView>

@@ -16,6 +16,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textViewForSnackbar;
     TextView textViewForCheckbox;
     TextView textViewForToggleButton;
+    TextView textViewForSeekBar;
     EditText editText;
     Button button;
     Button buttonForToast;
@@ -44,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
     RadioGroup radioGroup;
     RadioButton rBut1;
     RadioButton rBut2;
+    SeekBar seekBarRed;
+    SeekBar seekBarGreen;
+    SeekBar seekBarBlue;
 
     public void init() {
         textViewForEditText = findViewById(R.id.text_view_for_edit_text_id);
@@ -52,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         textViewForSnackbar = findViewById(R.id.text_view_for_snackbar_id);
         textViewForCheckbox = findViewById(R.id.text_view_for_checkbox_id);
         textViewForToggleButton = findViewById(R.id.text_view_for_toggle_button_id);
+        textViewForSeekBar = findViewById(R.id.text_view_for_seek_bar_id);
         editText = findViewById(R.id.edit_text_id);
         button = findViewById(R.id.button_id);
         buttonForToast = findViewById(R.id.button_for_toast_id);
@@ -63,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
         radioGroup = findViewById(R.id.radio_group_id);
         rBut1 = findViewById(R.id.radio_button_1_id);
         rBut2 = findViewById(R.id.radio_button_2_id);
+        seekBarRed = findViewById(R.id.seek_bar_red_id);
+        seekBarGreen = findViewById(R.id.seek_bar_green_id);
+        seekBarBlue = findViewById(R.id.seek_bar_blue_id);
     }
 
     @Override
@@ -158,9 +167,51 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        rBut1.setOnClickListener((view)->onRadioButtonClicked(view));
-        rBut2.setOnClickListener((view)->onRadioButtonClicked(view));
+        rBut1.setOnClickListener(this::onRadioButtonClicked);
+        rBut2.setOnClickListener(this::onRadioButtonClicked);
 
+        seekBarRed.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                setRGBBgSeekBar();
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        seekBarGreen.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                setRGBBgSeekBar();
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+        seekBarBlue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                setRGBBgSeekBar();
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 
     public void setRGBBgCheckbox() {
@@ -180,19 +231,31 @@ public class MainActivity extends AppCompatActivity {
             textViewForCheckbox.setBackgroundColor(Color.rgb(r, g, b));
         }
     }
-    public void onRadioButtonClicked(View view){
+    public void setRGBBgSeekBar(){
+        int r = 0, g = 0, b = 0;
+        r=seekBarRed.getProgress();
+        g=seekBarGreen.getProgress();
+        b=seekBarBlue.getProgress();
+        if (r == 0 && g == 0 & b == 0) {
+            textViewForSeekBar.setBackgroundResource(R.color.grey_panel);
+        } else {
+            textViewForSeekBar.setBackgroundColor(Color.rgb(r, g, b));
+        }
+    }
+
+    public void onRadioButtonClicked(View view) {
         RadioButton radio = (RadioButton) view;
         boolean checked = radio.isChecked();
         String test = radio.getText().toString();
         switch (test) {
             case "Left":
-                Toast toastL =makeText(this,"Left",Toast.LENGTH_SHORT);
-                toastL.setGravity(Gravity.LEFT,0,0);
+                Toast toastL = makeText(this, "Left", Toast.LENGTH_SHORT);
+                toastL.setGravity(Gravity.LEFT, 0, 0);
                 toastL.show();
                 break;
             case "Right":
-                Toast toastR =makeText(this,"Right",Toast.LENGTH_SHORT);
-                toastR.setGravity(Gravity.RIGHT,0,0);
+                Toast toastR = makeText(this, "Right", Toast.LENGTH_SHORT);
+                toastR.setGravity(Gravity.RIGHT, 0, 0);
                 toastR.show();
                 break;
         }

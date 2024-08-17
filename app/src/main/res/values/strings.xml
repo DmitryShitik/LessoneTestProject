@@ -24,4 +24,5 @@
     <string name="text_fot_radio_button_tv">RB</string>
     <string name="text_for_radio_button_left">Left</string>
     <string name="text_for_radio_button_right">Right</string>
+    <string name="text_fot_seek_bar_tv">SEEK</string>
 </resources>
